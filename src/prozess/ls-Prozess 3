@@ -22,5 +22,12 @@
  
                                                                            *) 
 PACKET ls prozess 3 DEFINES                    
-       temperatur:{}LET thermometerkonstante = 50.0,{}    minimaltemperatur    = 10.0;{}REAL PROC temperatur (REAL CONST spannungswert):{}  spannungswert * thermometerkonstante - minimaltemperatur{}END PROC temperatur{}END PACKET ls prozess 3{}
+       temperatur:
+LET thermometerkonstante = 50.0,
+    minimaltemperatur    = 10.0;
+REAL PROC temperatur (REAL CONST spannungswert):
+  spannungswert * thermometerkonstante - minimaltemperatur
+END PROC temperatur
+END PACKET ls prozess 3
+
 

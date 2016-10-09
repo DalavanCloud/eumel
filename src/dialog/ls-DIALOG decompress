@@ -69,7 +69,8 @@ PROC komprimiere (TEXT CONST dateiname):
  
   haenge zeilentrenner an: 
     IF zwischenzeile <> "" 
-       THEN zwischenzeile CAT "{}" 
+       THEN zwischenzeile CAT "
+" 
     FI. 
  
   haenge zwischenzeile an ausgabezeile: 
@@ -138,13 +139,15 @@ PROC dekomprimiere (TEXT CONST dateiname):
     PER. 
  
   nimm das erste stueck und schreibe es weg: 
-    ausgabezeile := subtext (eingabezeile, 1, pos (eingabezeile, "{}") - 1); 
+    ausgabezeile := subtext (eingabezeile, 1, pos (eingabezeile, "
+") - 1); 
     putline (aus, ausgabezeile); 
     zaehler INCR 1; 
     cout (zaehler). 
  
   entferne den zeilentrenner: 
-    eingabezeile := subtext (eingabezeile, pos (eingabezeile, "{}") + 2). 
+    eingabezeile := subtext (eingabezeile, pos (eingabezeile, "
+") + 2). 
 END PROC dekomprimiere; 
 END PACKET ls dialog decompress; 
 
